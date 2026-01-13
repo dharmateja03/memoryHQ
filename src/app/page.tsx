@@ -65,10 +65,10 @@ export default function HomePage() {
               <span className="text-2xl font-bold text-white">MindForge</span>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="/auth/login">
+              <Link href="/login">
                 <Button variant="ghost">Log In</Button>
               </Link>
-              <Link href="/auth/signup">
+              <Link href="/signup">
                 <Button>Get Started</Button>
               </Link>
             </div>
@@ -99,7 +99,7 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/auth/signup">
+                <Link href="/signup">
                   <Button size="xl" icon={<ArrowRight className="w-5 h-5" />}>
                     Start Free Assessment
                   </Button>
@@ -221,7 +221,7 @@ export default function HomePage() {
           <p className="text-gray-400 text-lg mb-8">
             Take our free cognitive assessment and discover your unique brain profile.
           </p>
-          <Link href="/auth/signup">
+          <Link href="/signup">
             <Button size="xl" icon={<ArrowRight className="w-5 h-5" />}>
               Start Your Journey
             </Button>

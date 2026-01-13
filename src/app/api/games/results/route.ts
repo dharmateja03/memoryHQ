@@ -5,6 +5,8 @@ import { gameResults, userStats } from '@/lib/db/schema';
 import { eq, desc } from 'drizzle-orm';
 import type { CognitiveDomain } from '@/types';
 
+export const dynamic = 'force-dynamic';
+
 // GET - Fetch user's game results
 export async function GET(request: Request) {
   try {

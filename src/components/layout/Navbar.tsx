@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Brain, Menu, X, User, Settings, LogOut, Flame } from 'lucide-react';
 import { useState } from 'react';
+import { signOut } from 'next-auth/react';
 import { Button } from '@/components/ui';
 
 interface NavbarProps {
@@ -113,7 +114,7 @@ export function Navbar({ user, streak = 0, onMenuToggle, isMenuOpen }: NavbarPro
                       </Link>
                       <hr className="border-navy-600 my-1" />
                       <button
-                        onClick={() => {/* Handle logout */}}
+                        onClick={() => signOut({ callbackUrl: '/' })}
                         className="flex items-center gap-2 px-3 py-2 text-sm text-error-400 hover:bg-navy-700 w-full"
                       >
                         <LogOut className="w-4 h-4" />
@@ -125,12 +126,12 @@ export function Navbar({ user, streak = 0, onMenuToggle, isMenuOpen }: NavbarPro
               </div>
             ) : (
               <div className="flex items-center gap-2">
-                <Link href="/auth/login">
+                <Link href="/login">
                   <Button variant="ghost" size="sm">
                     Log In
                   </Button>
                 </Link>
-                <Link href="/auth/signup">
+                <Link href="/signup">
                   <Button size="sm">Sign Up</Button>
                 </Link>
               </div>

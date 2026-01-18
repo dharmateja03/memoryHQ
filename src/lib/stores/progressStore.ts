@@ -66,31 +66,31 @@ export interface ProgressStats {
   totalCorrectAnswers: number;
 }
 
-// All games available in the app
+// All games available in the app (IDs must match GAME_COMPONENTS in [gameId]/page.tsx)
 const ALL_GAMES: { id: string; name: string; domain: CognitiveDomain }[] = [
   // Memory
-  { id: 'card-match', name: 'Card Match', domain: 'memory' },
+  { id: 'memory-matrix', name: 'Memory Matrix', domain: 'memory' },
   { id: 'memory-span', name: 'Memory Span', domain: 'memory' },
   { id: 'n-back', name: 'N-Back', domain: 'memory' },
   { id: 'word-recall', name: 'Word Recall', domain: 'memory' },
   { id: 'spatial-memory', name: 'Spatial Memory', domain: 'memory' },
   { id: 'visual-pairs', name: 'Visual Pairs', domain: 'memory' },
   // Attention
-  { id: 'focus-grid', name: 'Focus Grid', domain: 'attention' },
+  { id: 'stroop-test', name: 'Stroop Test', domain: 'attention' },
   { id: 'visual-search', name: 'Visual Search', domain: 'attention' },
   { id: 'sustained-attention', name: 'Sustained Attention', domain: 'attention' },
   { id: 'divided-attention', name: 'Divided Attention', domain: 'attention' },
   { id: 'flanker-task', name: 'Flanker Task', domain: 'attention' },
   { id: 'change-detection', name: 'Change Detection', domain: 'attention' },
   // Speed
-  { id: 'reaction-time', name: 'Reaction Time', domain: 'speed' },
+  { id: 'simple-reaction', name: 'Simple Reaction', domain: 'speed' },
   { id: 'choice-reaction', name: 'Choice Reaction', domain: 'speed' },
   { id: 'rapid-visual', name: 'Rapid Visual', domain: 'speed' },
   { id: 'symbol-matching', name: 'Symbol Matching', domain: 'speed' },
   { id: 'color-tap', name: 'Color Tap', domain: 'speed' },
   { id: 'motion-tracking', name: 'Motion Tracking', domain: 'speed' },
   // Problem Solving
-  { id: 'number-sequence', name: 'Number Sequence', domain: 'problem_solving' },
+  { id: 'number-series', name: 'Number Series', domain: 'problem_solving' },
   { id: 'matrix-reasoning', name: 'Matrix Reasoning', domain: 'problem_solving' },
   { id: 'tower-of-hanoi', name: 'Tower of Hanoi', domain: 'problem_solving' },
   { id: 'pattern-completion', name: 'Pattern Completion', domain: 'problem_solving' },

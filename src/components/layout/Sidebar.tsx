@@ -14,6 +14,7 @@ import {
   Zap,
   Puzzle,
   RefreshCw,
+  Users,
 } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { DOMAIN_COLORS, type CognitiveDomain } from '@/types';
@@ -26,16 +27,17 @@ interface SidebarProps {
 const mainNav = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/training', label: "Today's Training", icon: Dumbbell },
+  { href: '/multiplayer', label: 'Multiplayer', icon: Users },
   { href: '/progress', label: 'Progress', icon: BarChart3 },
   { href: '/achievements', label: 'Achievements', icon: Trophy },
 ];
 
 const domainNav: { href: string; label: string; icon: React.ElementType; domain: CognitiveDomain }[] = [
-  { href: '/games/memory', label: 'Memory', icon: Brain, domain: 'memory' },
-  { href: '/games/attention', label: 'Attention', icon: Target, domain: 'attention' },
-  { href: '/games/speed', label: 'Speed', icon: Zap, domain: 'speed' },
-  { href: '/games/problem-solving', label: 'Problem Solving', icon: Puzzle, domain: 'problem_solving' },
-  { href: '/games/flexibility', label: 'Flexibility', icon: RefreshCw, domain: 'flexibility' },
+  { href: '/games/category/memory', label: 'Memory', icon: Brain, domain: 'memory' },
+  { href: '/games/category/attention', label: 'Attention', icon: Target, domain: 'attention' },
+  { href: '/games/category/speed', label: 'Speed', icon: Zap, domain: 'speed' },
+  { href: '/games/category/problem-solving', label: 'Problem Solving', icon: Puzzle, domain: 'problem_solving' },
+  { href: '/games/category/flexibility', label: 'Flexibility', icon: RefreshCw, domain: 'flexibility' },
 ];
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {

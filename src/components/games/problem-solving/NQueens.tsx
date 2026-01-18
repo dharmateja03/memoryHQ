@@ -184,7 +184,8 @@ export function NQueens({
         }
       }, 2000);
     }
-  }, [gameState.currentRound, totalRounds, completeGame, nextRound, recordResponse, config.timeLimit, roundStartTime]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gameState.currentRound, totalRounds, completeGame, nextRound, recordResponse, roundStartTime]);
 
   const handleCellClick = (row: number, col: number) => {
     if (isComplete || gameState.status !== 'playing') return;

@@ -127,6 +127,58 @@ export const userAchievements = pgTable(
   })
 );
 
+// Friends table
+export const friends = pgTable(
+  'friends',
+  {
+    userId: text('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    friendId: text('friend_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    status: text('status').notNull().default('pending'), // pending, accepted, blocked
+    createdAt: timestamp('created_at', { mode: 'date' }).defaultNow(),
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.userId, table.friendId] }),
+  })
+);
+
+// Multiplayer match results
+export const matchResults = pgTable('match_results', {
+  id: text('id')
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID()),
+  roomCode: text('room_code').notNull(),
+  roomName: text('room_name').notNull(),
+  gameId: text('game_id').notNull(),
+  gameName: text('game_name').notNull(),
+  winnerId: text('winner_id').references(() => users.id),
+  playerCount: integer('player_count').notNull(),
+  createdAt: timestamp('created_at', { mode: 'date' }).defaultNow(),
+});
+
+// Match participants
+export const matchParticipants = pgTable(
+  'match_participants',
+  {
+    matchId: text('match_id')
+      .notNull()
+      .references(() => matchResults.id, { onDelete: 'cascade' }),
+    userId: text('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    score: integer('score').notNull(),
+    accuracy: real('accuracy').notNull(),
+    rank: integer('rank').notNull(),
+    finishTime: integer('finish_time'), // milliseconds
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.matchId, table.userId] }),
+  })
+);
+
 // Types
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
@@ -134,3 +186,6 @@ export type GameResult = typeof gameResults.$inferSelect;
 export type NewGameResult = typeof gameResults.$inferInsert;
 export type UserStats = typeof userStats.$inferSelect;
 export type UserAchievement = typeof userAchievements.$inferSelect;
+export type Friend = typeof friends.$inferSelect;
+export type MatchResult = typeof matchResults.$inferSelect;
+export type MatchParticipant = typeof matchParticipants.$inferSelect;

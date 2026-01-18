@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Brain, Menu, X, User, Settings, LogOut, Flame } from 'lucide-react';
 import { useState } from 'react';
@@ -69,11 +70,13 @@ export function Navbar({ user, streak = 0, onMenuToggle, isMenuOpen }: NavbarPro
                   onClick={() => setShowUserMenu(!showUserMenu)}
                   className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-navy-700 transition-colors"
                 >
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-electric-500 to-memory flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-electric-500 to-memory flex items-center justify-center overflow-hidden">
                     {user.avatar_url ? (
-                      <img
+                      <Image
                         src={user.avatar_url}
                         alt={user.name || 'User'}
+                        width={32}
+                        height={32}
                         className="w-full h-full rounded-full object-cover"
                       />
                     ) : (

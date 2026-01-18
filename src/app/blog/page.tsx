@@ -54,7 +54,7 @@ export default function BlogPage() {
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Science-backed insights on memory improvement, cognitive enhancement, and brain health.
-            Learn how to unlock your mind's full potential.
+            Learn how to unlock your mind&apos;s full potential.
           </p>
         </div>
 
@@ -159,7 +159,7 @@ export default function BlogPage() {
             Ready to Train Your Brain?
           </h2>
           <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-            Put what you've learned into practice. Start your personalized brain training program today and unlock your cognitive potential.
+            Put what you&apos;ve learned into practice. Start your personalized brain training program today and unlock your cognitive potential.
           </p>
           <Link
             href="/signup"

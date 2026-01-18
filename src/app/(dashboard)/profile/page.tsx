@@ -1,6 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { User, Mail, Calendar, Trophy, Flame, Gamepad2 } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui';
@@ -29,11 +30,13 @@ export default function ProfilePage() {
           </CardHeader>
           <CardContent>
             <div className="flex items-start gap-6">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-electric-500 to-memory flex items-center justify-center flex-shrink-0">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-electric-500 to-memory flex items-center justify-center flex-shrink-0 overflow-hidden">
                 {user?.image ? (
-                  <img
+                  <Image
                     src={user.image}
                     alt={user.name || 'User'}
+                    width={80}
+                    height={80}
                     className="w-full h-full rounded-full object-cover"
                   />
                 ) : (

@@ -273,7 +273,7 @@ export default async function BlogPostPage({ params }: Props) {
               Ready to Train Your Brain?
             </h2>
             <p className="text-gray-400 mb-6 max-w-lg mx-auto">
-              Apply what you've learned with our science-based brain training games.
+              Apply what you&apos;ve learned with our science-based brain training games.
             </p>
             <Link
               href="/signup"

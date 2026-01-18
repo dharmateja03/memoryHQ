@@ -114,6 +114,7 @@ export function VisualPairs({
       setPhase('test');
       generateOptions(newPairs[0], newPairs);
     }, config.displayTime);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [config.pairCount, config.displayTime]);
 
   const generateOptions = useCallback((currentPair: Pair, _allPairs: Pair[]) => {

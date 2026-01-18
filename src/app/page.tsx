@@ -64,6 +64,14 @@ export default function HomePage() {
               </div>
               <span className="text-2xl font-bold text-white">MindForge</span>
             </div>
+            <div className="hidden md:flex items-center gap-6">
+              <Link href="/games" className="text-gray-300 hover:text-white transition-colors">
+                Games
+              </Link>
+              <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                Blog
+              </Link>
+            </div>
             <div className="flex items-center gap-4">
               <Link href="/login">
                 <Button variant="ghost">Log In</Button>
@@ -232,10 +240,21 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="py-10 border-t border-navy-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <Brain className="w-6 h-6 text-electric-500" />
               <span className="text-lg font-semibold text-white">MindForge</span>
+            </div>
+            <div className="flex items-center gap-6">
+              <Link href="/games" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Games
+              </Link>
+              <Link href="/blog" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Blog
+              </Link>
+              <Link href="/dashboard" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Dashboard
+              </Link>
             </div>
             <p className="text-gray-500 text-sm">
               {new Date().getFullYear()} MindForge. Train smarter.
